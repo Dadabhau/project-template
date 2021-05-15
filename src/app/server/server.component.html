@@ -1,0 +1,105 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <h5>String Interpolation</h5>
+          <p>
+            {{ "Server" }} with id {{ serverId }} is {{ serverStatus }} and
+            {{ getServerStatus() }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <h5>Property Binding</h5>
+          <p>
+            <button class="btn btn-primary" [disabled]="!allowNewServer">
+              Click Here</button
+            >{{ allowNewServer }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <h5>Event Binding</h5>
+          <p>
+            <button
+              class="btn btn-primary"
+              [disabled]="!allowNewServer"
+              (click)="onCreateServer()"
+            >
+              Create Server
+            </button>
+          </p>
+          <p>{{ serverCreationStatus }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <h5>Passing and Using Data with Event Binding</h5>
+          <label class="">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            (input)="onUpdateServerName($event)"
+          />
+          <p>{{ serverName }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <h5>Two way Binding</h5>
+          <label class="">Name</label>
+          <input type="text" class="form-control" [(ngModel)]="serverTitle" />
+          <p>{{ serverTitle }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <h5>Combining all Forms of Databinding</h5>
+          <label class="">Name</label>
+          <input type="text" class="form-control" [(ngModel)]="serverTitle2" />
+          <button
+            class="btn btn-primary"
+            [disabled]="!allowNewServer"
+            (click)="onCreateServer2()"
+          >
+            Click Here
+          </button>
+          <p>{{ serverCreationStatus2 }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
