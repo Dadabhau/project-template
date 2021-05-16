@@ -1,1 +1,118 @@
-<p>servers works!</p>
+<h1>&nbsp;</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <h5>Using ngIf to Output Data Conditionally</h5>
+          <label class="">Name</label>
+          <input type="text" class="form-control" [(ngModel)]="serversTitle" />
+          <button
+            class="btn btn-primary"
+            [disabled]="!allowNewServer"
+            (click)="onCreateServers()"
+          >
+            Click Here
+          </button>
+          <!-- <p>{{ serversCreationStatus }}</p> -->
+          <p *ngIf="serversCreated; else noServer">
+            Server was created, server name is {{ serversTitle }}
+          </p>
+          <ng-template #noServer>
+            <p>No Server Created!</p>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <h5>Styling Elements Dynamically with ngStyle</h5>
+          <label class="">Name</label>
+          <input type="text" class="form-control" [(ngModel)]="serversTitle" />
+          <button
+            class="btn btn-primary"
+            [disabled]="!allowNewServer"
+            (click)="onCreateServers()"
+          >
+            Click Here
+          </button>
+          <!-- <p>{{ serversCreationStatus }}</p> -->
+          <p *ngIf="serversCreated; else noServer">
+            Server was created, server name is {{ serversTitle }}
+          </p>
+          <p [ngStyle]="{ backgroundColor: getColor() }">
+            {{ "Server" }} with id {{ serverId }} is {{ serverStatus }} and
+            {{ getServerStatus() }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <h5>Applying CSS Classes Dynamically with ngClass</h5>
+          <label class="">Name</label>
+          <input type="text" class="form-control" [(ngModel)]="serversTitle" />
+          <button
+            class="btn btn-primary"
+            [disabled]="!allowNewServer"
+            (click)="onCreateServers()"
+          >
+            Click Here
+          </button>
+          <!-- <p>{{ serversCreationStatus }}</p> -->
+          <p *ngIf="serversCreated; else noServer">
+            Server was created, server name is {{ serversTitle }}
+          </p>
+          <p
+            [ngStyle]="{ backgroundColor: getColor() }"
+            [ngClass]="{ online: serverStatus === 'online' }"
+          >
+            {{ "Server" }} with id {{ serverId }} is {{ serverStatus }} and
+            {{ getServerStatus() }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <h5>Outputting Lists with ngFor</h5>
+          <label class="">Name</label>
+          <input type="text" class="form-control" [(ngModel)]="serversTitle" />
+          <button
+            class="btn btn-primary"
+            [disabled]="!allowNewServer"
+            (click)="onCreateServers()"
+          >
+            Click Here
+          </button>
+          <!-- <p>{{ serversCreationStatus }}</p> -->
+          <p *ngIf="serversCreated; else noServer">
+            Server was created, server name is {{ serversTitle }}
+          </p>
+          <p
+            [ngStyle]="{ backgroundColor: getColor() }"
+            [ngClass]="{ online: serverStatus === 'online' }"
+          >
+            {{ "Server" }} with id {{ serverId }} is {{ serverStatus }} and
+            {{ getServerStatus() }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
